@@ -1,0 +1,43 @@
+
+<html>
+  <head>
+    <title>Google Plus Public Stuff</title>
+    <style type=text/css>
+      td  { vertical-align: top; padding: 0.5em }
+      img { border:0 }
+    </style>
+  </head>
+  <body>
+      <table border=0>
+      {% for item in activitylist.items %}
+      <tr valign=top>
+        <td>
+          {% if item.actor.image %}
+            <a href="{{ item.actor.url }}">
+              <img src="{{ item.actor.image.url }}">
+            </a>
+          {% endif %}
+          <br>
+          <a href="{{ item.object.actor.url }}">{{ item.actor.displayName }}</a></td>
+        <td>
+        {{ item.object.content|safe }}<br/><br/><br/>
+        {% for attachment in item.object.attachments %}
+            <a href="{{ attachment.url }}">
+            {{ attachment.content }}<br/>
+            {% if attachment.objectType == 'photo' %}
+            <img src="{{ attachment.image.url }}"/>
+            {% endif %}
+            </a>
+        {% endfor %}<br/>
+        +1 counter: {{ item.object.plusoners.totalItems }}<br/>
+        share counter: {{ item.object.plusoners.totalItems }}
+        </td>
+        <td>
+          <a href="{{ item.object.url }}"><img
+            src="/static/go.png"></a>
+        </td>
+      </tr>
+      {% endfor %}
+      </table>
+  </body>
+</html>
