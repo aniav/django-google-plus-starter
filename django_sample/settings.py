@@ -83,7 +83,7 @@ INSTALLED_APPS = (
     'django_sample.plus'
 )
 
-CLIENT_ID=None
-CLIENT_SECRET=None
+CLIENT_ID = None
+CLIENT_SECRET = None
 STEP2_URI = 'http://localhost:8000/auth_return'
 SCOPE = 'https://www.googleapis.com/auth/plus.me'
