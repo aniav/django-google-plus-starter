@@ -1,4 +1,4 @@
-django-google-plus-starter
+Google+ django sample project
 ============
 
 .. image:: https://api.travis-ci.org/aniav/django-google-plus-starter.png
